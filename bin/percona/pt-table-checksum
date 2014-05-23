@@ -1580,6 +1580,10 @@ sub get_dbh {
       $defaults->{mysql_local_infile} = 1;
    }
 
+   if ( $opts->{AutoCommit} ) {
+      $defaults->{mysql_auto_reconnect} = 1;
+   }
+
    if ( $opts->{mysql_use_result} ) {
       $defaults->{mysql_use_result} = 1;
    }
